@@ -21,15 +21,9 @@
                 <li>
                     <a href="index.html">Inicio</a>
                 </li>
-                <li>
-                    <a href="contacto.html">Contácto</a>
-                </li>
-                <li>
-                    <a href="galeria.html">Galería</a>
-                </li>
             {% if user.is_authenticaded %}
             <li> 
-                <a href="{% url 'logout' %}"> cerrar sesion </a>
+                <a href="{% url 'logout' %}"> Cerrar sesion </a>
             </li>
             <li>
                 <a href="#"> {{user.username}} </a>"
@@ -37,7 +31,7 @@
 
             {% else %}
             <li> 
-                <a href="{% url 'login' %}">iniciar sesion</a>
+                <a href="{% url 'login' %}">Iniciar sesion</a>
             </li>
             {% endif %}
 
