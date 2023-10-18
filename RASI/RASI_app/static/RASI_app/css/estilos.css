@@ -4,6 +4,7 @@
     padding:0;
 }
 
+
 body {
     background-color: #EDF2F7;
     font-family: 'Open Sans', sans-serif;
@@ -92,11 +93,14 @@ nav > ul > li > a {
     margin: auto;
     max-width: 1280px;
     min-height: 80vh;
+    
 }
 
 .home{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 @keyframes animacion_producto_desktop {
