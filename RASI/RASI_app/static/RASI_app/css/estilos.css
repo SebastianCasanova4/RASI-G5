@@ -94,7 +94,7 @@ nav > ul > li > a {
     min-height: 80vh;
 }
 
-.productos {
+.home{
     display: flex;
     flex-wrap: wrap;
 }
