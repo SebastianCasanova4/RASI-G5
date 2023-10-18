@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tecnomarket</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'RASI_app/css/estilos.css' %}">
+    
+</head>
+<body>
+<header id="header">
+    <img src="img/menuiconwhite.png" alt="menu" class="menu" id="menu">
+    <div class="contenedor_logo">
+        <img src="img/tecnomarketpngicono.png" alt="logo" class="logo">
+    </div>
+    <div>
+        <nav id="nav">
+            <ul>
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="contacto.html">Contácto</a>
+                </li>
+                <li>
+                    <a href="galeria.html">Galería</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div id="contenido">
+    {% block contenido %}
+    {% endblock %}
+
+</div>
+<footer>
+    <footer>
+        <div class="logo_footer">
+            <img src="img/tecnomarketpngicono.png" alt="logo">
+        </div>
+    </footer>
+</footer>
+<script src="js/menu.js"></script>
+</body>
+</html>
