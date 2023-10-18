@@ -27,6 +27,20 @@
                 <li>
                     <a href="galeria.html">Galería</a>
                 </li>
+            {% if user.is_authenticaded %}
+            <li> 
+                <a href="{% url 'logout' %}"> cerrar sesion </a>
+            </li>
+            <li>
+                <a href="#"> {{user.username}} </a>"
+            </li>
+
+            {% else %}
+            <li> 
+                <a href="{% url 'login' %}">iniciar sesion</a>
+            </li>
+            {% endif %}
+
             </ul>
         </nav>
     </div>
