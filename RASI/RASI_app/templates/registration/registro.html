@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ingreso al sistema</title>
+    <title>Registro de usuario</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #3498db, #2c3e50);
+            background: linear-gradient(to bottom, #4CAF50, #2196F3);
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
@@ -23,11 +23,11 @@
 
         .container {
             width: 100%;
-            max-width: 400px;
+            max-width: 600px;
             background: rgba(255, 255, 255, 0.8);
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 30px;
+            padding: 20px;
             text-align: center;
         }
 
@@ -50,7 +50,7 @@
         }
 
         input[type="submit"] {
-            background-color: #007BFF;
+            background-color: #4CAF50;
             color: #fff;
             border: none;
             border-radius: 3px;
@@ -59,22 +59,30 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #0056b3;
+            background-color: #45A049;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            margin: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Ingresa tus credenciales</h2>
+        <h2>Registro de usuario</h2>
         <hr>
         <form action="" method="post">
             {% csrf_token %}
-            
             {{ form }}
-            <input type="submit" value="Ingresar">
-            <br>    
-            <br>
-            <a href="{% url 'registro' %}">Registrarse</a> | <a href="{% url 'home' %}">Volver al inicio</a>
+            <a href="{% url 'home' %}">Ir al home</a>
+            <a href="{% url 'login' %}">Iniciar sesión</a>
+            <input type="submit" value="Registrar">
         </form>
     </div>
 </body>
