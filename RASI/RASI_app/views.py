@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from .forms import CustomUserCreationForm
 from django.contrib.auth import authenticate, login
@@ -30,3 +31,7 @@ def registro(request):
         else:
             data['form'] = formulario
     return render(request, 'registration/registro.html', data)
+
+def healthCheck(request):
+    
+    return HttpResponse('ok')
