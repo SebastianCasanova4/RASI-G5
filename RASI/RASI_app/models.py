@@ -32,6 +32,11 @@ class Paciente(models.Model):
     nombre_eps = models.CharField(max_length=50)
     fecha_nacimiento = models.DateField()
     imagen_diagnostico = models.ImageField(upload_to='images', null=True)
+    frecuencia_cardiaca = models.ArrayField(models.IntegerField(), blank=True, null=True)
+    presion  = models.ArrayField(models.IntegerField(), blank=True, null=True)
+    temperatura = models.ArrayField(models.IntegerField(), blank=True, null=True)
+    oxigeno = models.ArrayField(models.IntegerField(), blank=True, null=True)
+    frecuencia_respiratoria = models.ArrayField(models.IntegerField(), blank=True, null=True)
 
     def __str__(self):
         return self.nombre
