@@ -6,7 +6,7 @@ class UsuariosAdmin(admin.ModelAdmin):
     search_fields = ['cedula']
     list_filter = ['nombre_eps', 'dependecia']
 class PacienteAdmin(admin.ModelAdmin):
-    list_display = ['nombre', 'apellido', 'cedula', 'edad', 'telefono', 'direccion', 'correo', 'grupo_sanguineo', 'nombre_eps', 'fecha_nacimiento', 'imagen_diagnostico', 'frecuencia_cardiaca', 'presion', 'temperatura', 'oxigeno', 'frecuencia_respiratoria']
+    list_display = ['nombre', 'apellido', 'cedula', 'edad', 'telefono', 'direccion', 'correo', 'grupo_sanguineo', 'nombre_eps', 'fecha_nacimiento', 'imagen_diagnostico', 'signos_vitales']
     search_fields = ['cedula']
     list_filter = ['nombre_eps', 'grupo_sanguineo']
 admin.site.register(Paciente, PacienteAdmin)
