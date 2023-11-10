@@ -32,7 +32,7 @@ class Paciente(models.Model):
     nombre_eps = models.CharField(max_length=50)
     fecha_nacimiento = models.DateField()
     imagen_diagnostico = models.ImageField(upload_to='images', null=True)
-    signos_vitales = models.FieldFile(upload_to='signos',null=True)
+    signos_vitales = models.FileField(upload_to='signos' ,null=True)
 
     def __str__(self):
         return self.nombre
