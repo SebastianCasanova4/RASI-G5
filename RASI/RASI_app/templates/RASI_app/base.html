@@ -26,19 +26,14 @@
                 </li>
 
                 {% if user.is_authenticated %}
-                <li>
-                    <a href="{% url 'logout' %}">Cerrar sesión</a>
-                </li>
-                <li>
-                    <a href="#">{{ user.username }}</a>
-                </li>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a style="font-size:120%" class="nav-link">{{ user.username }}</a></li>
+                    <li><a style="font-size:120%; padding-right:20px" class="nav-link" href="/logout">Log out</a></li>
+                </ul>
                 {% else %}
-                <li>
-                    <a href="{% url 'login' %}">Iniciar sesión</a>
-                </li>
-                <li>
-                    <a href="{% url 'registro' %}">Registrarse</a>
-                </li>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a style="font-size:120%; padding-right:20px" class="navbar-link" href="/login/auth0">Login</a></li>
+                </ul>
                 {% endif %}
             </ul>
         </nav>
