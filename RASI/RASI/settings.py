@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'colorfield',
+    'social_django',
 ]
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
@@ -136,7 +137,9 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'static', 'media')
 IMAGES_URL = '/images/'
 IMAGES_ROOT = os.path.join(BASE_DIR, "images")
 SIGNOS_URL = '/signos/'
@@ -144,3 +147,26 @@ SIGNOS_ROOT = os.path.join(BASE_DIR, 'signos')
 
 # MongoDB Atlas Config
 MONGO_CLI = os.environ['MONGO_CLIENT']
+
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
+
+LOGIN_URL = "/login/auth0" 
+LOGIN_REDIRECT_URL = "/" 
+LOGOUT_REDIRECT_URL = "https://rasi-grupo5.us.auth0.com/v2/logout?returnTo=http%3A%2F%2F34.36.242.248:80"
+
+SOCIAL_AUTH_TRAILING_SLASH = False # Remove end slash from routes 
+SOCIAL_AUTH_AUTH0_DOMAIN = 'rasi-grupo5.us.auth0.com' 
+SOCIAL_AUTH_AUTH0_KEY = 'OJi9i2psXmMBk29iqusLoN9h43cQW0CG' 
+SOCIAL_AUTH_AUTH0_SECRET = 'ESBwvzPUdTmEZPH50XLoTcx2mIftt0WWhKAPR4qudFc2pL0sCPlXZ0MVw2Ee5sO3'
+
+SOCIAL_AUTH_AUTH0_SCOPE = [ 
+    'openid', 
+    'profile',
+    'email',
+    'role', ] 
+AUTHENTICATION_BACKENDS = { 
+    'RASI.auth0backend.Auth0', 
+    'django.contrib.auth.backends.ModelBackend', 
+}
