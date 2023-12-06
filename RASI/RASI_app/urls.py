@@ -11,5 +11,6 @@ urlpatterns = [
     path('registro/', registro, name='registro'),
     path('health-check/', healthCheck),
     url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
+    url(r'^pacientes/$', pacientes),
 ]
 

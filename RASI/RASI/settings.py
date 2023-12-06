@@ -141,3 +141,6 @@ IMAGES_URL = '/images/'
 IMAGES_ROOT = os.path.join(BASE_DIR, "images")
 SIGNOS_URL = '/signos/'
 SIGNOS_ROOT = os.path.join(BASE_DIR, 'signos')
+
+# MongoDB Atlas Config
+MONGO_CLI = os.environ['MONGO_CLIENT']
